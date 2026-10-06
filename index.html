@@ -82,9 +82,14 @@ h2 b{font-weight:700}
 .mix span{font-size:12px;color:var(--dim)}
 .more{display:inline-flex;align-items:center;gap:10px;margin-top:30px;font-size:13px;letter-spacing:1px;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:4px}
 .more svg.i{width:18px;height:18px}
+.rel{display:grid;grid-template-columns:1fr;gap:24px;margin-top:28px;align-items:center}
+.rel .cover{width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px;display:block;background:var(--card)}
+.rel .intro{margin:0 0 18px}
+.rel iframe{width:100%;height:152px;border:0;border-radius:12px;display:block}
+.rel .row{margin-top:18px}
 .about{display:grid;grid-template-columns:1fr;gap:28px;align-items:center}
-.about img{width:100%;max-width:420px;aspect-ratio:1;object-fit:cover;border-radius:14px}
-.about .txt p{font-size:16px;line-height:1.75;color:var(--muted);margin-top:16px}
+.about img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px}
+.about .txt p:not(.label){font-size:16px;line-height:1.75;color:var(--muted);margin-top:16px;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
 .stats{display:flex;gap:28px;margin-top:24px}
 .stats div{font-size:12px;color:var(--dim);letter-spacing:1px;text-transform:uppercase}
 .stats b{display:block;font-weight:700;font-size:30px;color:var(--cream);letter-spacing:0}
@@ -127,6 +132,7 @@ footer{padding:28px 0 48px;border-top:1px solid var(--line);text-align:center;fo
 .hero .bg.v{display:none}
 .big{font-size:150px}.thin{font-size:38px}h2{font-size:44px}
 .about{grid-template-columns:420px 1fr;gap:56px}
+.rel{grid-template-columns:380px 1fr;gap:48px}
 .sides{grid-template-columns:1fr 1fr}
 .feat{grid-template-columns:1fr 1fr;gap:28px}
 .two{grid-template-columns:1fr 1fr 1fr}
@@ -174,6 +180,20 @@ footer{padding:28px 0 48px;border-top:1px solid var(--line);text-align:center;fo
 <a class="more" href="https://www.youtube.com/@TVK.music.official/videos" target="_blank" rel="noopener"><svg class="i"><use href="#youtube"/></svg><span data-t="all">All mixes on YouTube</span></a>
 </div></section>
 
+<section id="music"><div class="wrap">
+<p class="label" data-t="music">Original music</p>
+<h2 data-t="music_h" data-h="1">New single <b>Headlights</b></h2>
+<div class="rel">
+<img class="cover" src="https://i.scdn.co/image/ab67616d0000b273c7ac46f949cf60f709853099" alt="Headlights cover art" loading="lazy">
+<div>
+<p class="intro" data-t="music_i">Written and produced by TVK. Out now on all platforms.</p>
+<iframe src="https://open.spotify.com/embed/track/3f94IZm2r6GR3ITNvsi1E2?utm_source=generator&theme=0" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Headlights on Spotify"></iframe>
+<div class="row"><a class="btn p" href="https://open.spotify.com/track/3f94IZm2r6GR3ITNvsi1E2" target="_blank" rel="noopener"><svg class="i"><use href="#spotify"/></svg>Spotify</a><a class="btn g" href="https://soundcloud.com/tvk-official/tvk-headlights" target="_blank" rel="noopener"><svg class="i"><use href="#soundcloud"/></svg>SoundCloud</a></div>
+<a class="more" href="https://open.spotify.com/artist/25Ev10DDOoYijnWt7qo1G1" target="_blank" rel="noopener"><svg class="i"><use href="#spotify"/></svg><span data-t="all_rel">All releases on Spotify</span></a>
+</div>
+</div>
+</div></section>
+
 <section id="about"><div class="wrap about">
 <img src="assets/tvk.jpg" alt="TVK" loading="lazy">
 <div class="txt">
@@ -217,10 +237,10 @@ footer{padding:28px 0 48px;border-top:1px solid var(--line);text-align:center;fo
 
 <footer>© <span id="yr"></span> TVK · Costa del Sol, Spain</footer>
 
-<script src="mixes.js?v=1791319603"></script>
+<script src="mixes.js?v=1791320120"></script>
 <script>
 const WA="34607157745";
-const T={es:{hero_sub:"Del atardecer a la noche · DJ y productor, Costa del Sol",listen:"Escuchar",book:"Contratar a TVK",latest:"Última sesión",onyt:"Ver en YouTube",mixes:"Sesiones",mood:"Elige <b>tu momento</b>",sun:"Atardecer",sun_s:"Afro y melodic house",night:"Noche",night_s:"Melodic house y techno",all:"Todas las sesiones en YouTube",about:"Sobre TVK",about_h:"El hombre <b>detrás de TVK</b>",bio:"DJ y productor estonio afincado en la Costa del Sol. Veinte años en la noche y la hostelería le enseñaron a leer la pista. Sus sesiones empiezan cálidas y con groove, con afro house al atardecer, y se adentran en el melodic house y el techno cuando cae la noche.",s1:"años en la noche",s2:"países",s3:"programas de radio",bookings:"Contrataciones",sides_h:"Dos caras <b>de TVK</b>",a1:"Beach clubs y chiringuitos",a2:"Rooftops y lounges de hotel",a3:"Sunset sessions y pool parties",a4:"Villas privadas y bodas",b1:"Noches de club",b2:"Eventos y warm-ups",b3:"Festivales y open air",b4:"Eventos de marca",booking:"Reservas",book_h:"Contrata <b>a TVK</b>",book_i:"Cuéntame sobre tu evento. Cuéntame sobre tu evento. El formulario abre WhatsApp con tu mensaje listo, solo tienes que enviarlo.",f_name:"Tu nombre",f_venue:"Local o evento",f_date:"Fecha",f_msg:"Cuéntame sobre el evento",send:"Enviar por WhatsApp",send_mail:"Enviar por email",best:"Sesiones destacadas",best_h:"Lo mejor <b>de TVK</b>",pick_sun:"Atardecer · afro house",pick_night:"Noche · melodic techno",onyt:"Ver en YouTube",subj:"Contratación TVK",follow:"Sígueme",follow_h:"No te pierdas <b>nada</b>",err:"Escribe tu nombre y un mensaje primero.",wa_hi:"Hola TVK, me gustaría contratarte.",wa_n:"Nombre",wa_v:"Local o evento",wa_d:"Fecha"},
+const T={es:{hero_sub:"Del atardecer a la noche · DJ y productor, Costa del Sol",listen:"Escuchar",book:"Contratar a TVK",latest:"Última sesión",onyt:"Ver en YouTube",mixes:"Sesiones",mood:"Elige <b>tu momento</b>",sun:"Atardecer",sun_s:"Afro y melodic house",night:"Noche",night_s:"Melodic house y techno",all:"Todas las sesiones en YouTube",about:"Sobre TVK",about_h:"El hombre <b>detrás de TVK</b>",bio:"DJ y productor estonio afincado en la Costa del Sol. Veinte años en la noche y la hostelería le enseñaron a leer la pista. Sus sesiones empiezan cálidas y con groove, con afro house al atardecer, y se adentran en el melodic house y el techno cuando cae la noche.",s1:"años en la noche",s2:"países",s3:"programas de radio",bookings:"Contrataciones",sides_h:"Dos caras <b>de TVK</b>",a1:"Beach clubs y chiringuitos",a2:"Rooftops y lounges de hotel",a3:"Sunset sessions y pool parties",a4:"Villas privadas y bodas",b1:"Noches de club",b2:"Eventos y warm-ups",b3:"Festivales y open air",b4:"Eventos de marca",booking:"Reservas",book_h:"Contrata <b>a TVK</b>",book_i:"Cuéntame sobre tu evento. Cuéntame sobre tu evento. El formulario abre WhatsApp con tu mensaje listo, solo tienes que enviarlo.",f_name:"Tu nombre",f_venue:"Local o evento",f_date:"Fecha",f_msg:"Cuéntame sobre el evento",send:"Enviar por WhatsApp",music:"Música original",music_h:"Nuevo single <b>Headlights</b>",music_i:"Escrito y producido por TVK. Ya disponible en todas las plataformas.",all_rel:"Todos los lanzamientos en Spotify",send_mail:"Enviar por email",best:"Sesiones destacadas",best_h:"Lo mejor <b>de TVK</b>",pick_sun:"Atardecer · afro house",pick_night:"Noche · melodic techno",onyt:"Ver en YouTube",subj:"Contratación TVK",follow:"Sígueme",follow_h:"No te pierdas <b>nada</b>",err:"Escribe tu nombre y un mensaje primero.",wa_hi:"Hola TVK, me gustaría contratarte.",wa_n:"Nombre",wa_v:"Local o evento",wa_d:"Fecha"},
 en:{pick_sun:"Sunset · afro house",pick_night:"After dark · melodic techno",onyt:"Watch on YouTube",subj:"Booking TVK",err:"Add your name and a message first.",wa_hi:"Hi TVK, I'd like to book you.",wa_n:"Name",wa_v:"Venue or event",wa_d:"Date"}};
 document.querySelectorAll("[data-t]").forEach(e=>e.dataset.en=e.innerHTML);
 document.querySelectorAll("[data-ph]").forEach(e=>e.dataset.en=e.placeholder);
