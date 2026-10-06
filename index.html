@@ -47,6 +47,8 @@ svg.i{width:20px;height:20px;fill:currentColor;display:block}
 .btn.p{background:var(--orange);color:#1c110c}
 .btn.g{border:1px solid rgba(255,242,230,.4)}
 .btn.wa{background:var(--orange);color:#1c110c}
+.big-wa{padding:18px 30px;font-size:15px}
+.big-wa svg.i{width:22px;height:22px}
 .btn svg.i{width:18px;height:18px}
 .hero .soc{margin-top:28px}
 section{padding:72px 0}
@@ -220,17 +222,8 @@ footer{padding:28px 0 48px;border-top:1px solid var(--line);text-align:center;fo
 <section id="book"><div class="wrap">
 <p class="label" data-t="booking">Booking</p>
 <h2 data-t="book_h" data-h="1">Book <b>TVK</b></h2>
-<p class="intro" data-t="book_i">Tell me about your event. The form opens WhatsApp with your message ready, you just press send.</p>
-<form id="form" novalidate>
-<div class="two">
-<input id="fName" data-ph="f_name" placeholder="Your name">
-<input id="fVenue" data-ph="f_venue" placeholder="Venue or event">
-<input id="fDate" data-ph="f_date" placeholder="Date">
-</div>
-<textarea id="fMsg" data-ph="f_msg" placeholder="Tell me about the event"></textarea>
-<div class="err" id="err" role="alert"></div>
-<div class="row"><button class="btn wa" type="submit" data-via="wa"><svg class="i"><use href="#whatsapp"/></svg><span data-t="send">Send on WhatsApp</span></button></div>
-</form>
+<p class="intro" data-t="book_i">Tell me about your event: the venue, the date and the vibe you want. I reply fast on WhatsApp.</p>
+<div class="row" style="margin-top:28px"><a class="btn wa big-wa" id="waBtn" href="https://wa.me/34607157745" target="_blank" rel="noopener"><svg class="i"><use href="#whatsapp"/></svg><span data-t="send">Message on WhatsApp</span></a></div>
 </div></section>
 
 <section class="alt follow"><div class="wrap">
@@ -241,10 +234,10 @@ footer{padding:28px 0 48px;border-top:1px solid var(--line);text-align:center;fo
 
 <footer>© <span id="yr"></span> TVK · Costa del Sol, Spain</footer>
 
-<script src="mixes.js?v=1791321119"></script>
+<script src="mixes.js?v=1791321407"></script>
 <script>
 const WA="34607157745";
-const T={es:{hero_sub:"Del atardecer a la noche · DJ y productor, Costa del Sol",listen:"Escuchar",book:"Contratar a TVK",latest:"Última sesión",onyt:"Ver en YouTube",mixes:"Sesiones",mood:"Elige <b>tu momento</b>",sun:"Atardecer",sun_s:"Afro y melodic house",night:"Noche",night_s:"Melodic house y techno",all:"Todas las sesiones en YouTube",about:"Sobre TVK",about_h:"El hombre <b>detrás de TVK</b>",bio:"DJ y productor estonio afincado en la Costa del Sol. Veinte años en la noche y la hostelería le enseñaron a leer la pista. Sus sesiones empiezan cálidas y con groove, con afro house al atardecer, y se adentran en el melodic house y el techno cuando cae la noche.",s1:"años en la noche",s2:"países",s3:"programas de radio",bookings:"Contrataciones",sides_h:"Dos caras <b>de TVK</b>",a1:"Beach clubs y chiringuitos",a2:"Rooftops y lounges de hotel",a3:"Sunset sessions y pool parties",a4:"Villas privadas y bodas",b1:"Noches de club",b2:"Eventos y warm-ups",b3:"Festivales y open air",b4:"Eventos de marca",booking:"Reservas",book_h:"Contrata <b>a TVK</b>",book_i:"Cuéntame sobre tu evento. El formulario abre WhatsApp con tu mensaje listo, solo tienes que enviarlo.",f_name:"Tu nombre",f_venue:"Local o evento",f_date:"Fecha",f_msg:"Cuéntame sobre el evento",send:"Enviar por WhatsApp",music:"Música original",music_h:"Nuevo single <b>Headlights</b>",music_i:"Escrito y producido por TVK. Ya disponible en todas las plataformas.",all_rel:"Todos los lanzamientos en Spotify",send_mail:"Enviar por email",best:"Sesiones destacadas",best_h:"Lo mejor <b>de TVK</b>",pick_sun:"Atardecer · afro house",pick_night:"Noche · melodic techno",onyt:"Ver en YouTube",subj:"Contratación TVK",follow:"Sígueme",follow_h:"No te pierdas <b>nada</b>",err:"Escribe tu nombre y un mensaje primero.",wa_hi:"Hola TVK, me gustaría contratarte.",wa_n:"Nombre",wa_v:"Local o evento",wa_d:"Fecha"},
+const T={es:{hero_sub:"Del atardecer a la noche · DJ y productor, Costa del Sol",listen:"Escuchar",book:"Contratar a TVK",latest:"Última sesión",onyt:"Ver en YouTube",mixes:"Sesiones",mood:"Elige <b>tu momento</b>",sun:"Atardecer",sun_s:"Afro y melodic house",night:"Noche",night_s:"Melodic house y techno",all:"Todas las sesiones en YouTube",about:"Sobre TVK",about_h:"El hombre <b>detrás de TVK</b>",bio:"DJ y productor estonio afincado en la Costa del Sol. Veinte años en la noche y la hostelería le enseñaron a leer la pista. Sus sesiones empiezan cálidas y con groove, con afro house al atardecer, y se adentran en el melodic house y el techno cuando cae la noche.",s1:"años en la noche",s2:"países",s3:"programas de radio",bookings:"Contrataciones",sides_h:"Dos caras <b>de TVK</b>",a1:"Beach clubs y chiringuitos",a2:"Rooftops y lounges de hotel",a3:"Sunset sessions y pool parties",a4:"Villas privadas y bodas",b1:"Noches de club",b2:"Eventos y warm-ups",b3:"Festivales y open air",b4:"Eventos de marca",booking:"Reservas",book_h:"Contrata <b>a TVK</b>",book_i:"Cuéntame sobre tu evento: el lugar, la fecha y el ambiente que buscas. Respondo rápido por WhatsApp.",f_name:"Tu nombre",f_venue:"Local o evento",f_date:"Fecha",f_msg:"Cuéntame sobre el evento",send:"Escríbeme por WhatsApp",music:"Música original",music_h:"Nuevo single <b>Headlights</b>",music_i:"Escrito y producido por TVK. Ya disponible en todas las plataformas.",all_rel:"Todos los lanzamientos en Spotify",send_mail:"Enviar por email",best:"Sesiones destacadas",best_h:"Lo mejor <b>de TVK</b>",pick_sun:"Atardecer · afro house",pick_night:"Noche · melodic techno",onyt:"Ver en YouTube",subj:"Contratación TVK",follow:"Sígueme",follow_h:"No te pierdas <b>nada</b>",err:"Escribe tu nombre y un mensaje primero.",wa_hi:"Hola TVK, me gustaría contratarte.",wa_n:"Nombre",wa_v:"Local o evento",wa_d:"Fecha"},
 en:{pick_sun:"Sunset · afro house",pick_night:"After dark · melodic techno",onyt:"Watch on YouTube",subj:"Booking TVK",err:"Add your name and a message first.",wa_hi:"Hi TVK, I'd like to book you.",wa_n:"Name",wa_v:"Venue or event",wa_d:"Date"}};
 document.querySelectorAll("[data-t]").forEach(e=>e.dataset.en=e.innerHTML);
 document.querySelectorAll("[data-ph]").forEach(e=>e.dataset.en=e.placeholder);
@@ -254,7 +247,7 @@ document.querySelectorAll("[data-t]").forEach(e=>{const v=l==="es"?T.es[e.datase
 document.querySelectorAll("[data-ph]").forEach(e=>{e.placeholder=l==="es"?T.es[e.dataset.ph]:e.dataset.en});
 document.querySelectorAll(".lang button").forEach(b=>b.classList.toggle("on",b.dataset.l===l));
 try{localStorage.setItem("tvk_lang",l)}catch(_){}
-if(window.renderFeat)renderFeat()}
+if(window.renderFeat)renderFeat();if(window.setWa)setWa()}
 document.querySelectorAll(".lang button").forEach(b=>b.onclick=()=>setLang(b.dataset.l));
 let saved=null;try{saved=localStorage.getItem("tvk_lang")}catch(_){}
 setLang(saved||((navigator.language||"").toLowerCase().startsWith("es")?"es":"en"));
@@ -279,14 +272,8 @@ document.querySelectorAll(".tab").forEach(t=>{const on=t.dataset.p===side;t.clas
 document.querySelectorAll(".tab").forEach(t=>t.onclick=()=>show(t.dataset.p));
 show("sun");
 
-const err=document.getElementById("err");
-["fName","fMsg"].forEach(id=>document.getElementById(id).addEventListener("input",()=>err.textContent=""));
-document.getElementById("form").onsubmit=e=>{e.preventDefault();
-const n=fName.value.trim(),v=fVenue.value.trim(),d=fDate.value.trim(),m=fMsg.value.trim();
-const tx=lang==="es"?T.es:T.en;
-if(!n||!m){err.textContent=tx.err;return}
-let s=tx.wa_hi+"\n\n"+tx.wa_n+": "+n;if(v)s+="\n"+tx.wa_v+": "+v;if(d)s+="\n"+tx.wa_d+": "+d;s+="\n\n"+m;
-window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(s),"_blank")};
+function setWa(){const tx=lang==="es"?T.es:T.en;document.getElementById("waBtn").href="https://wa.me/"+WA+"?text="+encodeURIComponent(tx.wa_hi+"\n\n"+tx.wa_v+": \n"+tx.wa_d+": ")}
+window.setWa=setWa;setWa();
 (matchMedia("(min-width:900px)").matches?document.querySelector(".hero .bg.v"):document.querySelector(".frame video"))?.remove();
 document.getElementById("yr").textContent=new Date().getFullYear();
 </script>
