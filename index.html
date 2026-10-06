@@ -58,6 +58,15 @@ h2 b{font-weight:700}
 .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:76px;height:76px;border-radius:50%;background:rgba(232,145,90,.95);display:flex;align-items:center;justify-content:center;transition:transform .15s}
 .player:hover .play{transform:translate(-50%,-50%) scale(1.06)}
 .play::after{content:"";border-left:22px solid #1c110c;border-top:13px solid transparent;border-bottom:13px solid transparent;margin-left:6px}
+.feat{display:grid;grid-template-columns:1fr;gap:36px;margin-top:28px}
+.feat .k{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
+.feat .night .k{color:var(--night)}
+.feat .player{margin-top:0}
+.feat>div:only-child{grid-column:1/-1}
+.feat h3{font-weight:300;text-transform:uppercase;font-size:20px;letter-spacing:1px;margin-top:16px;line-height:1.2}
+.feat h3 b{font-weight:700}
+.feat .meta{margin-top:8px}
+.mail{display:inline-flex;align-items:center;gap:8px;margin-top:18px;color:var(--muted);font-size:15px;border-bottom:1px solid var(--line);padding-bottom:3px}
 .meta{display:flex;justify-content:space-between;gap:16px;margin-top:14px;font-size:14px;color:var(--muted)}
 .tabs{display:inline-flex;gap:4px;padding:5px;margin-top:28px;border:1px solid var(--line);border-radius:40px;background:var(--bg)}
 .tab{padding:11px 20px;border-radius:30px;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-align:left}
@@ -119,6 +128,7 @@ footer{padding:28px 0 48px;border-top:1px solid var(--line);text-align:center;fo
 .big{font-size:150px}.thin{font-size:38px}h2{font-size:44px}
 .about{grid-template-columns:420px 1fr;gap:56px}
 .sides{grid-template-columns:1fr 1fr}
+.feat{grid-template-columns:1fr 1fr;gap:28px}
 .two{grid-template-columns:1fr 1fr 1fr}
 .follow .ic{grid-template-columns:repeat(6,1fr)}
 }
@@ -140,18 +150,17 @@ footer{padding:28px 0 48px;border-top:1px solid var(--line);text-align:center;fo
 <div class="bar"></div>
 <div class="thin">Afro House<br>Melodic House &amp; Techno</div>
 <p class="sub" data-t="hero_sub">From sunset to after dark · DJ and producer, Costa del Sol</p>
-<div class="btns"><a class="btn p" href="#mixes">▶ <span data-t="listen">Listen</span></a><a class="btn g" href="#book" data-t="book">Book TVK</a></div>
+<div class="btns"><a class="btn p" href="#best">▶ <span data-t="listen">Listen</span></a><a class="btn g" href="#book" data-t="book">Book TVK</a></div>
 <div class="soc"><a href="https://instagram.com/tvk.music" target="_blank" rel="noopener" aria-label="Instagram"><svg class="i"><use href="#instagram"/></svg></a><a href="https://www.youtube.com/@TVK.music.official" target="_blank" rel="noopener" aria-label="YouTube"><svg class="i"><use href="#youtube"/></svg></a><a href="https://soundcloud.com/tvk-official" target="_blank" rel="noopener" aria-label="SoundCloud"><svg class="i"><use href="#soundcloud"/></svg></a><a href="https://open.spotify.com/artist/25Ev10DDOoYijnWt7qo1G1" target="_blank" rel="noopener" aria-label="Spotify"><svg class="i"><use href="#spotify"/></svg></a><a href="https://www.mixcloud.com/tvkmusic" target="_blank" rel="noopener" aria-label="Mixcloud"><svg class="i"><use href="#mixcloud"/></svg></a><a href="https://www.tiktok.com/@dj.tvk.music" target="_blank" rel="noopener" aria-label="TikTok"><svg class="i"><use href="#tiktok"/></svg></a></div>
 </div>
 <div class="frame"><video autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg"><source src="assets/hero.webm" type="video/webm"><source src="assets/hero.mp4" type="video/mp4"></video></div>
 </div>
 </header>
 
-<section id="latest"><div class="wrap">
-<p class="label" data-t="latest">Latest mix</p>
-<h2 id="latestTitle"></h2>
-<button class="player" id="player" aria-label="Play latest mix"><img id="latestImg" alt=""><span class="play"></span></button>
-<div class="meta"><span id="latestSub"></span><a href="https://www.youtube.com/@TVK.music.official" target="_blank" rel="noopener" data-t="onyt">Watch on YouTube</a></div>
+<section id="best"><div class="wrap">
+<p class="label" data-t="best">Signature sets</p>
+<h2 data-t="best_h" data-h="1">The best <b>of TVK</b></h2>
+<div class="feat" id="feat"></div>
 </div></section>
 
 <section id="mixes" class="alt"><div class="wrap">
@@ -187,7 +196,7 @@ footer{padding:28px 0 48px;border-top:1px solid var(--line);text-align:center;fo
 <section id="book"><div class="wrap">
 <p class="label" data-t="booking">Booking</p>
 <h2 data-t="book_h" data-h="1">Book <b>TVK</b></h2>
-<p class="intro" data-t="book_i">Tell me about your event. The form opens WhatsApp with your message ready to send.</p>
+<p class="intro" data-t="book_i">Tell me about your event. Send it on WhatsApp or by email. Your message is ready to go, you just press send.</p>
 <form id="form" novalidate>
 <div class="two">
 <input id="fName" data-ph="f_name" placeholder="Your name">
@@ -196,7 +205,8 @@ footer{padding:28px 0 48px;border-top:1px solid var(--line);text-align:center;fo
 </div>
 <textarea id="fMsg" data-ph="f_msg" placeholder="Tell me about the event"></textarea>
 <div class="err" id="err" role="alert"></div>
-<div class="row"><button class="btn wa" type="submit"><svg class="i"><use href="#whatsapp"/></svg><span data-t="send">Send on WhatsApp</span></button></div>
+<div class="row"><button class="btn wa" type="submit" data-via="wa"><svg class="i"><use href="#whatsapp"/></svg><span data-t="send">Send on WhatsApp</span></button><button class="btn g" type="submit" data-via="mail"><span data-t="send_mail">Send by email</span></button></div>
+<a class="mail" href="mailto:tauri.tivik@gmail.com">tauri.tivik@gmail.com</a>
 </form>
 </div></section>
 
@@ -211,8 +221,8 @@ footer{padding:28px 0 48px;border-top:1px solid var(--line);text-align:center;fo
 <script src="mixes.js"></script>
 <script>
 const WA="34607157745";
-const T={es:{hero_sub:"Del atardecer a la noche · DJ y productor, Costa del Sol",listen:"Escuchar",book:"Contratar a TVK",latest:"Última sesión",onyt:"Ver en YouTube",mixes:"Sesiones",mood:"Elige <b>tu momento</b>",sun:"Atardecer",sun_s:"Afro y melodic house",night:"Noche",night_s:"Melodic house y techno",all:"Todas las sesiones en YouTube",about:"Sobre TVK",about_h:"El hombre <b>detrás de TVK</b>",bio:"DJ y productor estonio afincado en la Costa del Sol. Veinte años en la noche y la hostelería le enseñaron a leer la pista. Sus sesiones empiezan cálidas y con groove, con afro house al atardecer, y se adentran en el melodic house y el techno cuando cae la noche.",s1:"años en la noche",s2:"países",s3:"programas de radio",bookings:"Contrataciones",sides_h:"Dos caras <b>de TVK</b>",a1:"Beach clubs y chiringuitos",a2:"Rooftops y lounges de hotel",a3:"Sunset sessions y pool parties",a4:"Villas privadas y bodas",b1:"Noches de club",b2:"Eventos y warm-ups",b3:"Festivales y open air",b4:"Eventos de marca",booking:"Reservas",book_h:"Contrata <b>a TVK</b>",book_i:"Cuéntame sobre tu evento. El formulario abre WhatsApp con tu mensaje listo para enviar.",f_name:"Tu nombre",f_venue:"Local o evento",f_date:"Fecha",f_msg:"Cuéntame sobre el evento",send:"Enviar por WhatsApp",follow:"Sígueme",follow_h:"No te pierdas <b>nada</b>",err:"Escribe tu nombre y un mensaje primero.",wa_hi:"Hola TVK, me gustaría contratarte.",wa_n:"Nombre",wa_v:"Local o evento",wa_d:"Fecha"},
-en:{err:"Add your name and a message first.",wa_hi:"Hi TVK, I'd like to book you.",wa_n:"Name",wa_v:"Venue or event",wa_d:"Date"}};
+const T={es:{hero_sub:"Del atardecer a la noche · DJ y productor, Costa del Sol",listen:"Escuchar",book:"Contratar a TVK",latest:"Última sesión",onyt:"Ver en YouTube",mixes:"Sesiones",mood:"Elige <b>tu momento</b>",sun:"Atardecer",sun_s:"Afro y melodic house",night:"Noche",night_s:"Melodic house y techno",all:"Todas las sesiones en YouTube",about:"Sobre TVK",about_h:"El hombre <b>detrás de TVK</b>",bio:"DJ y productor estonio afincado en la Costa del Sol. Veinte años en la noche y la hostelería le enseñaron a leer la pista. Sus sesiones empiezan cálidas y con groove, con afro house al atardecer, y se adentran en el melodic house y el techno cuando cae la noche.",s1:"años en la noche",s2:"países",s3:"programas de radio",bookings:"Contrataciones",sides_h:"Dos caras <b>de TVK</b>",a1:"Beach clubs y chiringuitos",a2:"Rooftops y lounges de hotel",a3:"Sunset sessions y pool parties",a4:"Villas privadas y bodas",b1:"Noches de club",b2:"Eventos y warm-ups",b3:"Festivales y open air",b4:"Eventos de marca",booking:"Reservas",book_h:"Contrata <b>a TVK</b>",book_i:"Cuéntame sobre tu evento. Envíalo por WhatsApp o por email. Tu mensaje ya está listo, solo tienes que enviarlo.",f_name:"Tu nombre",f_venue:"Local o evento",f_date:"Fecha",f_msg:"Cuéntame sobre el evento",send:"Enviar por WhatsApp",send_mail:"Enviar por email",best:"Sesiones destacadas",best_h:"Lo mejor <b>de TVK</b>",pick_sun:"Atardecer · afro house",pick_night:"Noche · melodic techno",onyt:"Ver en YouTube",subj:"Contratación TVK",follow:"Sígueme",follow_h:"No te pierdas <b>nada</b>",err:"Escribe tu nombre y un mensaje primero.",wa_hi:"Hola TVK, me gustaría contratarte.",wa_n:"Nombre",wa_v:"Local o evento",wa_d:"Fecha"},
+en:{pick_sun:"Sunset · afro house",pick_night:"After dark · melodic techno",onyt:"Watch on YouTube",subj:"Booking TVK",err:"Add your name and a message first.",wa_hi:"Hi TVK, I'd like to book you.",wa_n:"Name",wa_v:"Venue or event",wa_d:"Date"}};
 document.querySelectorAll("[data-t]").forEach(e=>e.dataset.en=e.innerHTML);
 document.querySelectorAll("[data-ph]").forEach(e=>e.dataset.en=e.placeholder);
 let lang="en";
@@ -220,7 +230,8 @@ function setLang(l){lang=l;document.documentElement.lang=l;
 document.querySelectorAll("[data-t]").forEach(e=>{const v=l==="es"?T.es[e.dataset.t]:null;e.innerHTML=v||e.dataset.en});
 document.querySelectorAll("[data-ph]").forEach(e=>{e.placeholder=l==="es"?T.es[e.dataset.ph]:e.dataset.en});
 document.querySelectorAll(".lang button").forEach(b=>b.classList.toggle("on",b.dataset.l===l));
-try{localStorage.setItem("tvk_lang",l)}catch(_){}}
+try{localStorage.setItem("tvk_lang",l)}catch(_){}
+if(window.renderFeat)renderFeat()}
 document.querySelectorAll(".lang button").forEach(b=>b.onclick=()=>setLang(b.dataset.l));
 let saved=null;try{saved=localStorage.getItem("tvk_lang")}catch(_){}
 setLang(saved||((navigator.language||"").toLowerCase().startsWith("es")?"es":"en"));
@@ -228,12 +239,15 @@ setLang(saved||((navigator.language||"").toLowerCase().startsWith("es")?"es":"en
 const M=window.TVK_MIXES||[];
 const thumb=id=>`https://i.ytimg.com/vi/${id}/maxresdefault.jpg`;
 const fb=img=>{img.onerror=null;img.src=img.src.replace("maxresdefault","hqdefault")};
-const L=M[0];
-if(L){const t=L.title.replace(/&/g,"&amp;");const cut=t.lastIndexOf(" ",Math.ceil(t.length/2));
-document.getElementById("latestTitle").innerHTML=cut>0?t.slice(0,cut)+"<br><b>"+t.slice(cut+1)+"</b>":"<b>"+t+"</b>";
-document.getElementById("latestSub").textContent=L.sub;
-const li=document.getElementById("latestImg");li.onerror=()=>fb(li);li.src=thumb(L.id);
-document.getElementById("player").onclick=function(){this.innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${L.id}?autoplay=1&rel=0" title="${L.title}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;this.onclick=null}}
+function title2(t){t=t.replace(/&/g,"&amp;");const c=t.lastIndexOf(" ",Math.ceil(t.length/2));return c>0?t.slice(0,c)+"<br><b>"+t.slice(c+1)+"</b>":"<b>"+t+"</b>"}
+window.renderFeat=function(){const box=document.getElementById("feat");box.innerHTML="";const tx=lang==="es"?T.es:T.en;
+["sun","night"].forEach(side=>{const m=M.find(x=>x.side===side&&x.best);if(!m)return;
+const d=document.createElement("div");d.className=side;
+d.innerHTML=`<p class="k">${side==="sun"?tx.pick_sun:tx.pick_night}</p><button class="player" aria-label="Play ${m.title}"><img alt=""><span class="play"></span></button><h3>${title2(m.title)}</h3><div class="meta"><span></span><a href="https://www.youtube.com/watch?v=${m.id}" target="_blank" rel="noopener">${tx.onyt}</a></div>`;
+const im=d.querySelector("img");im.onerror=()=>fb(im);im.src=thumb(m.id);d.querySelector(".meta span").textContent=m.sub;
+const pl=d.querySelector(".player");pl.onclick=()=>{pl.innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${m.id}?autoplay=1&rel=0" title="${m.title}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;pl.onclick=null};
+box.append(d)})};
+renderFeat();
 function show(side){const g=document.getElementById("grid");g.innerHTML="";
 M.filter(m=>m.side===side).forEach(m=>{const a=document.createElement("a");a.className="mix";a.href="https://www.youtube.com/watch?v="+m.id;a.target="_blank";a.rel="noopener";
 const im=document.createElement("img");im.loading="lazy";im.alt=m.title;im.onerror=()=>fb(im);im.src=thumb(m.id);
@@ -244,12 +258,12 @@ show("sun");
 
 const err=document.getElementById("err");
 ["fName","fMsg"].forEach(id=>document.getElementById(id).addEventListener("input",()=>err.textContent=""));
-document.getElementById("form").onsubmit=e=>{e.preventDefault();
+document.getElementById("form").onsubmit=e=>{e.preventDefault();const via=(e.submitter&&e.submitter.dataset.via)||"wa";
 const n=fName.value.trim(),v=fVenue.value.trim(),d=fDate.value.trim(),m=fMsg.value.trim();
 const tx=lang==="es"?T.es:T.en;
 if(!n||!m){err.textContent=tx.err;return}
 let s=tx.wa_hi+"\n\n"+tx.wa_n+": "+n;if(v)s+="\n"+tx.wa_v+": "+v;if(d)s+="\n"+tx.wa_d+": "+d;s+="\n\n"+m;
-window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(s),"_blank")};
+if(via==="mail"){location.href="mailto:tauri.tivik@gmail.com?subject="+encodeURIComponent(tx.subj+": "+n)+"&body="+encodeURIComponent(s)}else{window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(s),"_blank")}};
 (matchMedia("(min-width:900px)").matches?document.querySelector(".hero .bg.v"):document.querySelector(".frame video"))?.remove();
 document.getElementById("yr").textContent=new Date().getFullYear();
 </script>
