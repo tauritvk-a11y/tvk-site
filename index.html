@@ -55,15 +55,16 @@ h2{font-weight:300;text-transform:uppercase;font-size:32px;letter-spacing:1px;li
 h2 b{font-weight:700}
 .player{position:relative;margin-top:28px;border-radius:14px;overflow:hidden;aspect-ratio:16/9;background:#000;width:100%;display:block}
 .player img,.player iframe{width:100%;height:100%;object-fit:cover;display:block;border:0}
-.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:76px;height:76px;border-radius:50%;background:rgba(232,145,90,.95);display:flex;align-items:center;justify-content:center;transition:transform .15s}
-.player:hover .play{transform:translate(-50%,-50%) scale(1.06)}
-.play::after{content:"";border-left:22px solid #1c110c;border-top:13px solid transparent;border-bottom:13px solid transparent;margin-left:6px}
-.feat{display:grid;grid-template-columns:1fr;gap:36px;margin-top:28px}
-.feat .k{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
-.feat .night .k{color:var(--night)}
+.play{position:absolute;right:16px;bottom:16px;width:58px;height:58px;box-shadow:0 6px 20px rgba(0,0,0,.45);border-radius:50%;background:rgba(232,145,90,.95);display:flex;align-items:center;justify-content:center;transition:transform .15s}
+.player:hover .play{transform:scale(1.08)}
+.play::after{content:"";border-left:17px solid #1c110c;border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:5px}
+.feat{display:grid;grid-template-columns:1fr;gap:0;margin-top:28px}
+.feat>div+div{margin-top:44px;padding-top:44px;border-top:1px solid var(--line)}
+.feat .k{display:inline-block;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--orange);border:1px solid rgba(232,145,90,.45);border-radius:30px;padding:8px 16px;margin-bottom:16px}
+.feat .night .k{color:var(--night);border-color:rgba(143,156,255,.45)}
 .feat .player{margin-top:0}
 .feat>div:only-child{grid-column:1/-1}
-.feat h3{font-weight:300;text-transform:uppercase;font-size:20px;letter-spacing:1px;margin-top:16px;line-height:1.2}
+.feat h3{font-weight:500;text-transform:uppercase;font-size:16px;letter-spacing:1px;margin-top:16px;line-height:1.35}
 .feat h3 b{font-weight:700}
 .feat .meta{margin-top:8px}
 .mail{display:inline-flex;align-items:center;gap:8px;margin-top:18px;color:var(--muted);font-size:15px;border-bottom:1px solid var(--line);padding-bottom:3px}
@@ -135,6 +136,7 @@ footer{padding:28px 0 48px;border-top:1px solid var(--line);text-align:center;fo
 .rel{grid-template-columns:380px 1fr;gap:48px}
 .sides{grid-template-columns:1fr 1fr}
 .feat{grid-template-columns:1fr 1fr;gap:28px}
+.feat>div+div{margin-top:0;padding-top:0;border-top:0}
 .two{grid-template-columns:1fr 1fr 1fr}
 .follow .ic{grid-template-columns:repeat(6,1fr)}
 }
@@ -237,7 +239,7 @@ footer{padding:28px 0 48px;border-top:1px solid var(--line);text-align:center;fo
 
 <footer>© <span id="yr"></span> TVK · Costa del Sol, Spain</footer>
 
-<script src="mixes.js?v=1791320120"></script>
+<script src="mixes.js?v=1791320835"></script>
 <script>
 const WA="34607157745";
 const T={es:{hero_sub:"Del atardecer a la noche · DJ y productor, Costa del Sol",listen:"Escuchar",book:"Contratar a TVK",latest:"Última sesión",onyt:"Ver en YouTube",mixes:"Sesiones",mood:"Elige <b>tu momento</b>",sun:"Atardecer",sun_s:"Afro y melodic house",night:"Noche",night_s:"Melodic house y techno",all:"Todas las sesiones en YouTube",about:"Sobre TVK",about_h:"El hombre <b>detrás de TVK</b>",bio:"DJ y productor estonio afincado en la Costa del Sol. Veinte años en la noche y la hostelería le enseñaron a leer la pista. Sus sesiones empiezan cálidas y con groove, con afro house al atardecer, y se adentran en el melodic house y el techno cuando cae la noche.",s1:"años en la noche",s2:"países",s3:"programas de radio",bookings:"Contrataciones",sides_h:"Dos caras <b>de TVK</b>",a1:"Beach clubs y chiringuitos",a2:"Rooftops y lounges de hotel",a3:"Sunset sessions y pool parties",a4:"Villas privadas y bodas",b1:"Noches de club",b2:"Eventos y warm-ups",b3:"Festivales y open air",b4:"Eventos de marca",booking:"Reservas",book_h:"Contrata <b>a TVK</b>",book_i:"Cuéntame sobre tu evento. Cuéntame sobre tu evento. El formulario abre WhatsApp con tu mensaje listo, solo tienes que enviarlo.",f_name:"Tu nombre",f_venue:"Local o evento",f_date:"Fecha",f_msg:"Cuéntame sobre el evento",send:"Enviar por WhatsApp",music:"Música original",music_h:"Nuevo single <b>Headlights</b>",music_i:"Escrito y producido por TVK. Ya disponible en todas las plataformas.",all_rel:"Todos los lanzamientos en Spotify",send_mail:"Enviar por email",best:"Sesiones destacadas",best_h:"Lo mejor <b>de TVK</b>",pick_sun:"Atardecer · afro house",pick_night:"Noche · melodic techno",onyt:"Ver en YouTube",subj:"Contratación TVK",follow:"Sígueme",follow_h:"No te pierdas <b>nada</b>",err:"Escribe tu nombre y un mensaje primero.",wa_hi:"Hola TVK, me gustaría contratarte.",wa_n:"Nombre",wa_v:"Local o evento",wa_d:"Fecha"},
@@ -262,7 +264,7 @@ function title2(t){t=t.replace(/&/g,"&amp;");const c=t.lastIndexOf(" ",Math.ceil
 window.renderFeat=function(){const box=document.getElementById("feat");box.innerHTML="";const tx=lang==="es"?T.es:T.en;
 ["sun","night"].forEach(side=>{const m=M.find(x=>x.side===side&&x.best);if(!m)return;
 const d=document.createElement("div");d.className=side;
-d.innerHTML=`<p class="k">${side==="sun"?tx.pick_sun:tx.pick_night}</p><button class="player" aria-label="Play ${m.title}"><img alt=""><span class="play"></span></button><h3>${title2(m.title)}</h3><div class="meta"><span></span><a href="https://www.youtube.com/watch?v=${m.id}" target="_blank" rel="noopener">${tx.onyt}</a></div>`;
+d.innerHTML=`<p class="k">${side==="sun"?tx.pick_sun:tx.pick_night}</p><button class="player" aria-label="Play ${m.title}"><img alt=""><span class="play"></span></button><h3>${m.title.replace(/&/g,"&amp;")}</h3><div class="meta"><span></span><a href="https://www.youtube.com/watch?v=${m.id}" target="_blank" rel="noopener">${tx.onyt}</a></div>`;
 const im=d.querySelector("img");im.onerror=()=>fb(im);im.src=thumb(m.id);d.querySelector(".meta span").textContent=m.sub;
 const pl=d.querySelector(".player");pl.onclick=()=>{pl.innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${m.id}?autoplay=1&rel=0" title="${m.title}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;pl.onclick=null};
 box.append(d)})};
