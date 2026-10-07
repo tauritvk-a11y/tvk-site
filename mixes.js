@@ -3,6 +3,8 @@
 // side = "sun" (Sunset tab) or "night" (After dark tab)
 // best: true = shown in "Signature sets" at the top. One per side.
 window.TVK_MIXES = [
+  { id: "fGXefdsJCRI", side: "night", title: "Melodic Techno Party Mix", sub: "Mathame, Adriatique" },
+  { id: "crm4NLRirZE", side: "night", title: "Melodic House DJ Mix", sub: "RÜFÜS DU SOL, Anyma, ARTBAT" },
   { id: "V2RoKUpqskw", side: "night", title: "Melodic Techno DJ Mix", sub: "Anyma, Adriatique, Kevin de Vries" },
   { id: "246Fq7evaHY", side: "night", title: "Melodic House & Techno Mix", sub: "Interstellar peak time journey" },
   { id: "fX0YsZhk8fc", side: "night", best: true, title: "Melodic Techno & Progressive", sub: "Dark festival energy" },
