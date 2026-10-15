@@ -3,6 +3,11 @@
 // side = "sun" (Sunset tab) or "night" (After dark tab)
 // best: true = shown in "Signature sets" at the top. One per side.
 window.TVK_MIXES = [
+  { id: "sdOJwKCNrXw", side: "night", title: "Melodic Techno Mix", sub: "Solomun x Nina Simone, Mathame, Argy & Omiki" },
+  { id: "0McBpjv8y7Q", side: "night", title: "Melodic Techno & Tech House Mix", sub: "Children, Need To Feel Loved & Lay Low reworked" },
+  { id: "fzsXVDaJ9G0", side: "night", title: "Melodic House & Techno Mix", sub: "Sex On Fire, Valerie & All Of The Lights reworked" },
+  { id: "8eePaLh-cSI", side: "night", title: "Melodic House & Techno Mix", sub: "SexyBack & Somebody reworked" },
+  { id: "SAarBWo2DfY", side: "night", title: "Melodic House & Techno & Reworked Classics", sub: "Titanium, In and Out of Love, In the Moment" },
   { id: "fGXefdsJCRI", side: "night", title: "Melodic Techno Party Mix", sub: "Mathame, Adriatique" },
   { id: "crm4NLRirZE", side: "night", title: "Melodic House DJ Mix", sub: "RÜFÜS DU SOL, Anyma, ARTBAT" },
   { id: "V2RoKUpqskw", side: "night", title: "Melodic Techno DJ Mix", sub: "Anyma, Adriatique, Kevin de Vries" },
