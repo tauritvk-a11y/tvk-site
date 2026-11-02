@@ -2,7 +2,7 @@
 
 One-page site for TVK, DJ and producer on the Costa del Sol.
 
-- `index.html` is the whole page (English and Spanish).
+- `index.html` is the English page, `es/index.html` the Spanish page. Both are built from one template.
 - `mixes.js` is the list of mixes. To add a new set, copy one line and change the YouTube id, the tab (`sun` or `night`) and the titles. The first line shows as "Latest mix".
 - `assets/` holds the header video, photos and icons.
 
